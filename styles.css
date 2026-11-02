@@ -243,6 +243,21 @@ a {
   color: var(--yellow);
 }
 
+.plate {
+  margin: 1.25em 0 0;
+  width: min(100%, 186px);
+  border: var(--rule);
+  background: var(--cream);
+  line-height: 0;
+}
+
+.plate img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
 .colophon {
   margin: auto 0 0;
   padding-top: 1.6em;
