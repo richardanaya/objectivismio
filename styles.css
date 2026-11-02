@@ -7,12 +7,11 @@
 }
 
 @font-face {
-  font-family: "Playfair Display";
+  font-family: "Geist Serif";
   font-style: normal;
-  font-weight: 900;
+  font-weight: 400;
   font-display: swap;
-  src: url("assets/playfair-display-900.woff2") format("woff2");
-  unicode-range: U+0020, U+0041-005A;
+  src: url("assets/geist-serif-regular.woff2") format("woff2");
 }
 
 :root {
@@ -25,7 +24,7 @@
   --magenta: #fb66c9;
   --rule: 1px solid var(--ink);
   --sans: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --serif: "Playfair Display", "Times New Roman", Times, serif;
+  --serif: "Geist Serif", "Times New Roman", Times, serif;
 }
 
 *,
@@ -36,6 +35,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -96,6 +97,7 @@ a {
   container-type: inline-size;
   container-name: sheet;
   position: relative;
+  width: min(1120px, calc(100% - 56px));
   max-width: 1120px;
   margin: 28px auto;
   border: 2px solid var(--ink);
@@ -331,22 +333,59 @@ a {
 .dot-seam-l { left: -6px; }
 .dot-seam-r { right: -6px; }
 
-.wordmark {
-  position: relative;
-  margin: 0;
+.keep {
+  white-space: nowrap;
 }
 
-.mark-svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
+.wordmark {
+  container-type: inline-size;
+  position: relative;
+  margin: 0;
+  --scan-period: 0.75cqi;
+  --scan-ink: 0.33cqi;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 0.74;
+  text-transform: uppercase;
 }
 
 .mark-line {
-  font-family: var(--serif);
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--cream) 0 var(--scan-ink),
+    transparent var(--scan-ink) var(--scan-period)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--cream);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .mark-line {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.mark-top {
+  font-size: 20.8cqi;
+  letter-spacing: -0.04em;
+  transform: scaleX(1.316);
+  transform-origin: left center;
+}
+
+.mark-bot {
+  font-size: 24.7cqi;
+  letter-spacing: -0.05em;
+  margin-top: -0.02em;
+  transform: scaleX(1.255);
+  background-position-y: -0.648cqi;
+  transform-origin: left center;
 }
 
 .field-foot {
@@ -449,7 +488,8 @@ a {
 
 @media (max-width: 980px) {
   .sheet {
-    margin: 14px;
+    width: auto;
+    margin: max(12px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
   }
 
   .columns {
@@ -477,26 +517,107 @@ a {
     font-size: 16px;
   }
 
+  .mast-path {
+    align-items: center;
+  }
+
+  .brand,
+  .mast-path a {
+    display: inline-block;
+    min-height: 44px;
+    line-height: 44px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    min-height: 44px;
+    margin-top: 1.15em;
+    padding: 0 14px;
+  }
+
   .pillar li {
     font-size: 13px;
+    white-space: normal;
+  }
+
+  .pillar,
+  .field {
+    scroll-margin-top: 12px;
   }
 }
 
 @media (max-width: 760px) {
   .mast {
     grid-template-columns: 1fr auto;
-    align-items: start;
+    align-items: center;
+    gap: 4px 16px;
+  }
+
+  .brand {
+    grid-column: 1;
+    grid-row: 1;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .est {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
   }
 
   .mast-path {
     grid-column: 1 / -1;
+    grid-row: 2;
     justify-content: flex-start;
   }
 }
 
 @media (max-width: 640px) {
   .stripes {
-    height: 64px;
+    height: 72px;
+  }
+
+  .mast {
+    padding: 2px 14px 0;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .mast-path {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 0 -14px;
+    border-top: var(--rule);
+  }
+
+  .mast-path > span {
+    display: none;
+  }
+
+  .mast-path a {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    column-gap: 0.35em;
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 8px 14px;
+    line-height: 1.25;
+    border-top: var(--rule);
+  }
+
+  .mast-path a:nth-of-type(odd) {
+    border-right: var(--rule);
+  }
+
+  .mast-path a:nth-of-type(-n + 2) {
+    border-top: 0;
   }
 
   .columns {
