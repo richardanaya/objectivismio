@@ -12,7 +12,7 @@ python3 -m http.server 8080
 
 Open [http://localhost:8080](http://localhost:8080).
 
-There is no build step. `index.html` and `styles.css` are the site. Paths are relative, so the same files work locally and on a project-site subpath.
+There is no build step for the pages. `css/base.css` is the shared sheet. `css/home.css` is the poster. `css/article.css` is the essay layout. Paths are relative, so the same files work locally and on a project-site subpath. The body typesetter is the bundled `assets/typeset.js`; rebuild it with `npm run build:typeset` only if `src/` changes.
 
 ## GitHub Pages
 

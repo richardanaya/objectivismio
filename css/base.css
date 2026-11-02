@@ -1,9 +1,10 @@
+/* Shared chrome for every page: tokens, sheet, mast, footer, body type. */
 @font-face {
   font-family: Inter;
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("assets/inter-latin.woff2") format("woff2");
+  src: url("../assets/inter-latin.woff2") format("woff2");
 }
 
 @font-face {
@@ -11,7 +12,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/geist-serif-regular.woff2") format("woff2");
+  src: url("../assets/geist-serif-regular.woff2") format("woff2");
 }
 
 :root {
@@ -159,155 +160,8 @@ a {
   white-space: nowrap;
 }
 
-.stripes {
-  display: grid;
-  grid-template-columns: 196fr 161fr 180fr 176fr;
-  height: clamp(76px, 14.4cqw, 162px);
-  border-bottom: var(--rule);
-}
-
-.stripe-y {
-  background: repeating-linear-gradient(-45deg, var(--yellow) 0 11px, var(--cream) 11px 22px);
-}
-
-.stripe-c {
-  background: repeating-linear-gradient(-45deg, var(--cyan) 0 11px, var(--cream) 11px 22px);
-}
-
-.stripe-g {
-  background: repeating-linear-gradient(-45deg, var(--lime) 0 11px, var(--cream) 11px 22px);
-}
-
-.stripe-m {
-  background: repeating-linear-gradient(-45deg, var(--magenta) 0 11px, var(--cream) 11px 22px);
-}
-
-.columns {
-  display: grid;
-  grid-template-columns: 1.85fr 1.08fr 1.12fr 1.06fr 1fr;
-  border-bottom: var(--rule);
-}
-
-.brand-col,
-.pillar {
-  min-width: 0;
-  padding: 2.15cqw 1.35cqw 1.45cqw;
-  border-right: var(--rule);
-}
-
-.pillar:last-child {
-  border-right: 0;
-}
-
-.brand-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.headline {
-  margin: 1.15em 0 0;
-  font-size: clamp(13px, 1.45cqw, 17px);
-  font-weight: 750;
-  letter-spacing: 0.035em;
-  line-height: 1.18;
-  text-transform: uppercase;
-}
-
-.deck {
-  margin: 0.75em 0 0;
-  max-width: 16em;
-  font-size: clamp(10px, 1.05cqw, 12px);
-  font-weight: 650;
-  letter-spacing: 0.08em;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.cta {
-  display: inline-block;
-  margin-top: 1.15em;
-  padding: 0.72em 0.85em 0.68em;
-  background: var(--yellow);
-  color: var(--ink);
-  font-size: clamp(11px, 1.15cqw, 13px);
-  font-weight: 750;
-  letter-spacing: 0.12em;
-  line-height: 1;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.cta:hover {
-  background: var(--ink);
-  color: var(--yellow);
-}
-
-.plate {
-  margin: 1.25em 0 0;
-  width: min(100%, 186px);
-  border: var(--rule);
-  background: var(--cream);
-  line-height: 0;
-}
-
-.plate img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-}
-
-.colophon {
-  margin: auto 0 0;
-  padding-top: 1.6em;
-  font-size: 10px;
-  font-weight: 650;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.pillar:target {
-  background: #e6e4c6;
-}
-
-.pillar h2 {
-  margin: 0 0 1.05em;
-  font-size: clamp(10px, 1.05cqw, 12px);
-  font-weight: 650;
-  letter-spacing: 0.11em;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.pillar h2 span {
-  font-variant-numeric: tabular-nums;
-}
-
-.pillar ul,
-.micro ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.pillar li {
-  font-size: clamp(11px, 1.12cqw, 13px);
-  font-weight: 750;
-  letter-spacing: 0.02em;
-  line-height: 1.38;
-  text-transform: uppercase;
+.keep {
   white-space: nowrap;
-}
-
-.pillar p {
-  margin: 1.2em 0 0;
-  font-size: 12.5px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.45;
-  text-transform: none;
-  overflow-wrap: anywhere;
 }
 
 .reticle {
@@ -354,114 +208,7 @@ a {
   font-size: 22px;
 }
 
-.field {
-  position: relative;
-  background: var(--ink);
-  color: var(--cream);
-  padding: 4.6cqw 2.1cqw 3.6cqw;
-}
-
-.dot-seam {
-  top: -5px;
-}
-
-.dot-seam-l { left: -6px; }
-.dot-seam-r { right: -6px; }
-
-.keep {
-  white-space: nowrap;
-}
-
-.wordmark {
-  container-type: inline-size;
-  position: relative;
-  margin: 0;
-  font-family: var(--serif);
-  font-weight: 400;
-  font-synthesis: none;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.mark-line {
-  display: block;
-  width: 100%;
-  white-space: nowrap;
-  font-size: 16.05cqi;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  padding-bottom: 0.3em;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    var(--cream) 0 0.0159em,
-    transparent 0.0159em 0.0361em
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: var(--cream);
-}
-
-@supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .mark-line {
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-.field-foot {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px 32px;
-  margin-top: 5.5cqw;
-}
-
-.micro {
-  width: max-content;
-  max-width: 100%;
-  margin-left: auto;
-  font-size: 11px;
-  font-weight: 650;
-  letter-spacing: 0.14em;
-  line-height: 1.45;
-  text-transform: uppercase;
-}
-
-.micro .hair {
-  display: block;
-  width: 100%;
-  height: 1px;
-  margin-bottom: 0.7em;
-  background: var(--cream);
-}
-
-.micro .tick {
-  display: block;
-  width: 2.4em;
-  height: 4px;
-  margin-top: 0.75em;
-  background: var(--orange);
-}
-
-.ethic {
-  display: grid;
-  grid-template-columns: 1.35fr 1.15fr 0.9fr;
-  border-bottom: var(--rule);
-  background: var(--cream);
-}
-
-.ethic > * {
-  min-width: 0;
-  padding: 2.3cqw 1.7cqw 2.1cqw;
-  border-right: var(--rule);
-}
-
-.ethic > :last-child {
-  border-right: 0;
-}
-
-.kicker,
-.ethic h3 {
+.kicker {
   margin: 0 0 0.85em;
   font-size: 11px;
   font-weight: 650;
@@ -472,31 +219,6 @@ a {
 
 .kicker span {
   font-variant-numeric: tabular-nums;
-}
-
-.ethic h2 {
-  margin: 0 0 0.75em;
-  font-size: clamp(18px, 2.35cqw, 28px);
-  font-weight: 750;
-  letter-spacing: 0.02em;
-  line-height: 1.12;
-  text-transform: uppercase;
-}
-
-.ethic p {
-  margin: 0;
-  font-size: 14.5px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.5;
-}
-
-.ethic p + p {
-  margin-top: 0.85em;
-}
-
-.ethic h3 {
-  margin-bottom: 0.7em;
 }
 
 .page-nav {
@@ -520,10 +242,6 @@ a {
 .page-nav a:hover,
 .foot-nav a:hover {
   color: var(--orange);
-}
-
-.ethic:target {
-  background: #e6e4c6;
 }
 
 .bar {
@@ -652,41 +370,11 @@ p.para .end {
   gap: 12px;
 }
 
-@media (min-width: 981px) {
-  .columns {
-    min-height: 31cqw;
-  }
-}
 
 @media (max-width: 980px) {
   .sheet {
     width: auto;
     margin: max(12px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
-  }
-
-  .columns {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .brand-col {
-    grid-column: 1 / -1;
-    border-right: 0;
-    border-bottom: var(--rule);
-    padding-bottom: 22px;
-  }
-
-  .pillar:nth-child(2),
-  .pillar:nth-child(3) {
-    border-bottom: var(--rule);
-  }
-
-  .pillar:nth-child(3),
-  .pillar:nth-child(5) {
-    border-right: 0;
-  }
-
-  .headline {
-    font-size: 16px;
   }
 
   .mast-path {
@@ -698,39 +386,6 @@ p.para .end {
     display: inline-block;
     min-height: 44px;
     line-height: 44px;
-  }
-
-  .cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45em;
-    min-height: 44px;
-    margin-top: 1.15em;
-    padding: 0 14px;
-  }
-
-  .pillar li {
-    font-size: 13px;
-    white-space: normal;
-  }
-
-  .pillar,
-  .field,
-  .ethic {
-    scroll-margin-top: 12px;
-  }
-
-  .ethic {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .ethic-lead {
-    grid-column: 1 / -1;
-    border-bottom: var(--rule);
-  }
-
-  .ethic-nav {
-    border-right: 0;
   }
 }
 
@@ -763,19 +418,6 @@ p.para .end {
 }
 
 @media (max-width: 640px) {
-  .brand-col,
-  .pillar {
-    padding: 22px 16px;
-  }
-
-  .plate {
-    width: 100%;
-  }
-
-  .stripes {
-    height: 72px;
-  }
-
   .mast {
     padding: 2px 14px 0;
     font-size: 12px;
@@ -815,51 +457,13 @@ p.para .end {
     border-top: 0;
   }
 
-  .columns {
-    grid-template-columns: 1fr;
-  }
-
-  .pillar,
-  .pillar:nth-child(3),
-  .pillar:nth-child(5) {
-    border-right: 0;
-    border-bottom: var(--rule);
-  }
-
-  .pillar:last-child {
-    border-bottom: 0;
-  }
-
-  .field {
-    padding: 22px 16px 20px;
-  }
-
-  .field-foot {
-    flex-wrap: wrap;
-    margin-top: 22px;
+  .page-nav a {
+    min-height: 44px;
   }
 
   .foot {
     grid-template-columns: 1fr;
     padding: 6px 0 10px;
-  }
-
-  .ethic {
-    grid-template-columns: 1fr;
-  }
-
-  .ethic > * {
-    border-right: 0;
-    border-bottom: var(--rule);
-    padding: 22px 16px;
-  }
-
-  .ethic > :last-child {
-    border-bottom: 0;
-  }
-
-  .page-nav a {
-    min-height: 44px;
   }
 
   .foot-brand,
