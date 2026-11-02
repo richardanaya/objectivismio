@@ -26,6 +26,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -72,6 +74,7 @@ a {
 
 .sheet {
   position: relative;
+  width: min(1160px, calc(100% - 36px));
   max-width: 1160px;
   margin: 18px auto;
   border: var(--rule);
@@ -114,7 +117,19 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.35em 0.55em;
+  column-gap: 0.55em;
+  row-gap: 0.35em;
+}
+
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  white-space: nowrap;
+}
+
+.keep {
+  white-space: nowrap;
 }
 
 .mast-path a {
@@ -122,8 +137,11 @@ a {
 }
 
 .mast-path a:hover,
+.mast-path a:active,
 .foot a:hover,
-.brand:hover {
+.foot a:active,
+.brand:hover,
+.brand:active {
   color: var(--orange);
 }
 
@@ -236,7 +254,8 @@ h1 .bar {
   text-decoration: none;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:active {
   background: var(--ink);
   color: var(--yellow);
 }
@@ -279,6 +298,12 @@ a:focus-visible,
 
 .pillar:target {
   background: #e7e4c4;
+}
+
+.pillar,
+.ethic,
+.hero {
+  scroll-margin-top: 12px;
 }
 
 .pillar h2 {
@@ -390,16 +415,23 @@ a:focus-visible,
 
 @media (max-width: 960px) {
   .sheet {
-    margin: 10px;
+    width: auto;
+    margin: max(14px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(22px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
   }
 
   .mast {
     grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0 16px;
+    padding: 4px 16px 0;
   }
 
   .brand {
     grid-column: 1;
     grid-row: 1;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 
   .est {
@@ -414,19 +446,49 @@ a:focus-visible,
     justify-content: flex-start;
   }
 
+  .mast-path a {
+    display: inline-block;
+    min-height: 44px;
+    line-height: 44px;
+  }
+
   .hero {
     grid-template-columns: 1fr;
+    min-width: 0;
   }
 
   .hero-copy {
     border-right: 0;
     border-bottom: var(--rule);
-    padding: 22px 18px 20px;
+    padding: 22px 20px 20px;
+  }
+
+  .kicker {
+    min-width: 0;
+  }
+
+  h1 .word {
+    font-size: clamp(30px, 13.2cqi, 96px);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45em;
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  .poster {
+    min-width: 0;
   }
 
   .poster img {
     width: 100%;
-    max-width: none;
+    max-width: 100%;
+    height: auto;
     max-height: none;
   }
 
@@ -441,11 +503,68 @@ a:focus-visible,
   .pillar:nth-child(2) {
     border-right: 0;
   }
+
+  .pillar h2,
+  .pillar li {
+    overflow-wrap: break-word;
+  }
+
+  .foot a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
 }
 
 @media (max-width: 640px) {
   .stripes {
-    height: 42px;
+    height: 48px;
+  }
+
+  .mast {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+
+  .mast-path {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 2px -16px 0;
+    border-top: var(--rule);
+  }
+
+  .crumb {
+    display: flex;
+    align-items: stretch;
+    min-width: 0;
+    white-space: normal;
+    border-top: var(--rule);
+  }
+
+  .crumb:nth-child(odd) {
+    border-right: var(--rule);
+  }
+
+  .crumb:nth-child(-n + 2) {
+    border-top: 0;
+  }
+
+  .sep {
+    display: none;
+  }
+
+  .mast-path a {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-content: center;
+    column-gap: 0.35em;
+    min-height: 48px;
+    padding: 8px 14px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    line-height: 1.25;
   }
 
   .pillars {
@@ -456,23 +575,70 @@ a:focus-visible,
   .pillar:nth-child(2) {
     border-right: 0;
     border-bottom: var(--rule);
+    padding: 22px 20px 26px;
   }
 
   .pillar:last-child {
     border-bottom: 0;
   }
 
+  .pillar h2 {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+
+  .pillar ul {
+    font-size: 15px;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+  }
+
+  .pillar p {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .kicker,
+  .tagline,
+  .pillar p,
+  .foot p {
+    text-wrap: balance;
+  }
+
+  .kicker {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+
   .ethic {
-    padding: 22px 18px;
+    gap: 16px;
+    padding: 22px 18px 24px;
   }
 
   .foot {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 0;
+    padding: 4px 16px 8px;
+    letter-spacing: 0.11em;
   }
 
-  h1 .word {
-    font-size: clamp(36px, 11vw, 64px);
+  .foot p,
+  .foot a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    margin: 0;
+  }
+
+  .foot a {
+    overflow-wrap: anywhere;
   }
 }
 
