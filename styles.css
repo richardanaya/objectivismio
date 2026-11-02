@@ -582,6 +582,45 @@ a {
   text-transform: none;
 }
 
+p.para {
+  --size: 20px;
+  --leading: 32px;
+  --measure: 760px;
+  max-width: var(--measure);
+  font-family: "Geist Serif", "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: var(--size);
+  font-synthesis: none;
+  line-height: var(--leading);
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+}
+
+p.para .set {
+  display: block;
+}
+
+p.para .line {
+  display: block;
+  position: relative;
+  height: var(--leading);
+  line-height: var(--leading);
+  white-space: pre;
+}
+
+p.para .sp {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+p.para .end {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 .foot-nav {
   display: flex;
   flex-direction: column;

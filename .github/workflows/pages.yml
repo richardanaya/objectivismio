@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir -p _site/assets
           cp index.html styles.css .nojekyll _site/
-          cp assets/objectivism-hero.png assets/immortal-robot-dither.png assets/inter-latin.woff2 assets/geist-serif-regular.woff2 assets/favicon.svg _site/assets/
+          cp assets/objectivism-hero.png assets/immortal-robot-dither.png assets/inter-latin.woff2 assets/geist-serif-regular.woff2 assets/favicon.svg assets/typeset.js _site/assets/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
