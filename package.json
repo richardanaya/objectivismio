@@ -1,0 +1,14 @@
+{
+  "name": "objectivismio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:typeset": "esbuild src/typeset.js --bundle --format=iife --outfile=assets/typeset.js"
+  },
+  "dependencies": {
+    "@chenglou/pretext": "1.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.11"
+  }
+}
