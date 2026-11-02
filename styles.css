@@ -214,6 +214,16 @@ a {
   text-transform: uppercase;
 }
 
+.deck {
+  margin: 0.75em 0 0;
+  max-width: 16em;
+  font-size: clamp(10px, 1.05cqw, 12px);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
 .cta {
   display: inline-block;
   margin-top: 1.15em;
