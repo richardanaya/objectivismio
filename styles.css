@@ -366,24 +366,25 @@ a {
   container-type: inline-size;
   position: relative;
   margin: 0;
-  --scan-period: 0.75cqi;
-  --scan-ink: 0.33cqi;
   font-family: var(--serif);
   font-weight: 400;
   font-synthesis: none;
-  line-height: 0.74;
+  line-height: 1;
   text-transform: uppercase;
 }
 
 .mark-line {
   display: block;
-  width: max-content;
-  max-width: 100%;
+  width: 100%;
   white-space: nowrap;
+  font-size: 16.05cqi;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  padding-bottom: 0.3em;
   background-image: repeating-linear-gradient(
     to bottom,
-    var(--cream) 0 var(--scan-ink),
-    transparent var(--scan-ink) var(--scan-period)
+    var(--cream) 0 0.0159em,
+    transparent 0.0159em 0.0361em
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -395,22 +396,6 @@ a {
     color: transparent;
     -webkit-text-fill-color: transparent;
   }
-}
-
-.mark-top {
-  font-size: 20.8cqi;
-  letter-spacing: -0.04em;
-  transform: scaleX(1.316);
-  transform-origin: left center;
-}
-
-.mark-bot {
-  font-size: 24.7cqi;
-  letter-spacing: -0.05em;
-  margin-top: -0.02em;
-  transform: scaleX(1.255);
-  background-position-y: -0.648cqi;
-  transform-origin: left center;
 }
 
 .field-foot {
@@ -602,6 +587,10 @@ a {
 }
 
 @media (max-width: 640px) {
+  .plate {
+    width: 100%;
+  }
+
   .stripes {
     height: 72px;
   }
