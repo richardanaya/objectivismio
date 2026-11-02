@@ -300,6 +300,16 @@ a {
   white-space: nowrap;
 }
 
+.pillar p {
+  margin: 1.2em 0 0;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.45;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
 .reticle {
   position: relative;
   display: grid;
@@ -433,6 +443,89 @@ a {
   background: var(--orange);
 }
 
+.ethic {
+  display: grid;
+  grid-template-columns: 1.35fr 1.15fr 0.9fr;
+  border-bottom: var(--rule);
+  background: var(--cream);
+}
+
+.ethic > * {
+  min-width: 0;
+  padding: 2.3cqw 1.7cqw 2.1cqw;
+  border-right: var(--rule);
+}
+
+.ethic > :last-child {
+  border-right: 0;
+}
+
+.kicker,
+.ethic h3 {
+  margin: 0 0 0.85em;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.kicker span {
+  font-variant-numeric: tabular-nums;
+}
+
+.ethic h2 {
+  margin: 0 0 0.75em;
+  font-size: clamp(18px, 2.35cqw, 28px);
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+
+.ethic p {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+.ethic p + p {
+  margin-top: 0.85em;
+}
+
+.ethic h3 {
+  margin-bottom: 0.7em;
+}
+
+.page-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-nav a {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.page-nav a:hover,
+.foot-nav a:hover {
+  color: var(--orange);
+}
+
+.ethic:target {
+  background: #e6e4c6;
+}
+
 .bar {
   height: clamp(9px, 1.4cqw, 16px);
   background: var(--orange);
@@ -448,20 +541,20 @@ a {
 }
 
 .foot-brand,
-.foot-path,
+.foot-nav,
 .foot-mark {
   padding: 14px 22px 16px;
 }
 
 .foot-brand,
-.foot-path {
+.foot-nav {
   border-right: 1px solid rgba(241, 240, 219, 0.85);
   margin-block: 12px;
 }
 
 .foot-name,
 .foot-ethic,
-.foot-path {
+.foot-year {
   margin: 0;
   font-size: 11px;
   font-weight: 650;
@@ -479,15 +572,45 @@ a {
   background: var(--cream);
 }
 
-.foot-path {
-  align-self: center;
-  text-align: center;
-  border-right: 1px solid rgba(241, 240, 219, 0.85);
+.foot-note {
+  margin: 0.95em 0 0;
+  max-width: 26em;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.45;
+  text-transform: none;
+}
+
+.foot-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  gap: 0.15em;
+}
+
+.foot-nav a {
+  width: max-content;
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.foot-nav a:hover {
+  color: var(--yellow);
 }
 
 .foot-mark {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 @media (min-width: 981px) {
@@ -553,8 +676,22 @@ a {
   }
 
   .pillar,
-  .field {
+  .field,
+  .ethic {
     scroll-margin-top: 12px;
+  }
+
+  .ethic {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ethic-lead {
+    grid-column: 1 / -1;
+    border-bottom: var(--rule);
+  }
+
+  .ethic-nav {
+    border-right: 0;
   }
 }
 
@@ -663,26 +800,48 @@ a {
     padding: 6px 0 10px;
   }
 
+  .ethic {
+    grid-template-columns: 1fr;
+  }
+
+  .ethic > * {
+    border-right: 0;
+    border-bottom: var(--rule);
+    padding: 22px 16px;
+  }
+
+  .ethic > :last-child {
+    border-bottom: 0;
+  }
+
+  .page-nav a {
+    min-height: 44px;
+  }
+
   .foot-brand,
-  .foot-path,
+  .foot-nav,
   .foot-mark {
     margin: 0;
     border-right: 0;
   }
 
   .foot-brand,
-  .foot-path {
+  .foot-nav {
     border-bottom: 1px solid rgba(241, 240, 219, 0.85);
     margin-inline: 16px;
     padding-inline: 4px;
   }
 
-  .foot-path {
-    text-align: left;
+  .foot-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
   }
 
   .foot-mark {
-    justify-content: end;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 16px;
     padding-right: 22px;
   }
 }
