@@ -26,8 +26,10 @@ jobs:
 
       - name: Assemble site
         run: |
-          mkdir -p _site/assets
-          cp index.html styles.css .nojekyll _site/
+          mkdir -p _site/css _site/articles _site/assets
+          cp index.html .nojekyll _site/
+          cp css/base.css css/home.css css/article.css _site/css/
+          cp articles/inductica-objectivist-ai.html _site/articles/
           cp assets/objectivism-hero.png assets/immortal-robot-dither.png assets/inter-latin.woff2 assets/geist-serif-regular.woff2 assets/favicon.svg assets/typeset.js _site/assets/
 
       - name: Setup Pages

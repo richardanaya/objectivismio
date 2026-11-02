@@ -3303,7 +3303,20 @@
     other: ["oth", "er"],
     others: ["oth", "ers"],
     under: ["un", "der"],
-    value: ["val", "ue"]
+    value: ["val", "ue"],
+    objectivist: ["Objec", "tivist"],
+    epistemology: ["epistemo", "logy"],
+    measurement: ["measure", "ment"],
+    propositions: ["proposi", "tions"],
+    provisional: ["provi", "sional"],
+    conceptual: ["concep", "tual"],
+    statistical: ["statis", "tical"],
+    announcement: ["announce", "ment"],
+    specification: ["speci", "fi", "ca", "tion"],
+    identification: ["iden", "ti", "fi", "ca", "tion"],
+    consciousness: ["con", "scious", "ness"],
+    probability: ["prob", "a", "bil", "i", "ty"],
+    unpublished: ["un", "pub", "lished"]
   };
   var PREFIXES = ["inter", "trans", "under", "over", "counter", "contra", "extra", "super", "hyper", "anti", "auto", "fore", "semi", "mono", "multi", "non", "pre", "pro", "sub", "com", "con", "dis", "mis", "un", "re", "de", "ex", "in", "im", "en", "em"];
   var SUFFIXES = ["tion", "sion", "ment", "ness", "able", "ible", "ious", "eous", "ative", "itive", "ical", "ally", "ing", "ous", "ful", "less", "ive", "ial", "ism", "ist", "ity", "ence", "ance", "ure", "ture", "ies", "ly", "ed", "er", "al"];
