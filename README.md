@@ -31,4 +31,4 @@ After the workflow runs, the site is at:
 
 Source: [github.com/richardanaya/objectivismio](https://github.com/richardanaya/objectivismio)
 
-Inter is included under the SIL Open Font License (`assets/inter-OFL.txt`). The wordmark is Geist Serif, also under the SIL Open Font License (`assets/geist-serif-OFL.txt`). The poster PNG is the social preview only; it is not placed in the page.
+Inter is included under the SIL Open Font License (`assets/inter-OFL.txt`). The wordmark is Geist Serif, also under the SIL Open Font License (`assets/geist-serif-OFL.txt`). The poster PNG is the social preview only. The brand column carries the dithered immortal-robot plate (`assets/immortal-robot-dither.png`).
