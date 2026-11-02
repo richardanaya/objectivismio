@@ -763,6 +763,11 @@ p.para .end {
 }
 
 @media (max-width: 640px) {
+  .brand-col,
+  .pillar {
+    padding: 22px 16px;
+  }
+
   .plate {
     width: 100%;
   }
