@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir -p _site/assets
           cp index.html styles.css .nojekyll _site/
-          cp assets/objectivism-hero.png assets/inter-latin.woff2 assets/favicon.svg _site/assets/
+          cp assets/objectivism-hero.png assets/inter-latin.woff2 assets/playfair-display-900.woff2 assets/favicon.svg _site/assets/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

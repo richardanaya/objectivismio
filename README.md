@@ -1,6 +1,6 @@
 # objectivismio
 
-A single-page site for Objectivism, set in the poster’s brand system: cream ground, heavy black rules, caution yellow, orange, and a four-color stripe. The hero is the poster in `assets/objectivism-hero.png`.
+A single-page site for Objectivism. The homepage is an HTML/CSS recreation of the poster: cream sheet, registration dots, four diagonal stripe bands, the five-column reason grid, and a scan-line Objectivism wordmark. `assets/objectivism-hero.png` is the same poster, used for the social preview image.
 
 ## Run locally
 
